@@ -8,7 +8,7 @@ public class CardTester {
 	 *	@param args is not used.
 	 */
 	public static void main(String[] args) {
-		Card card1 = new Card("test1", "hears", 5);
+		Card card1 = new Card("test1", "hearts", 5);
 		Card card2 = new Card("test2", "diamonds", 7);
 		Card card3 = new Card("test3", "spades", 9);
 		
@@ -38,6 +38,8 @@ public class CardTester {
 		
 		System.out.println(card1.matches(card3));
 		System.out.println(card3.matches(card1));
+		
+		System.out.println(card3.matches(card3));
 		
 	}
 }

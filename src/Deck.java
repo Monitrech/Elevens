@@ -18,7 +18,7 @@ public class Deck {
 	 * Cards are dealt from the top (highest index) down.
 	 * The next card to be dealt is at size - 1.
 	 */
-	private int size;
+	private int size = 0;
 
 
 	/**
@@ -31,9 +31,11 @@ public class Deck {
 	 */
 	public Deck(String[] ranks, String[] suits, int[] values) {
 		cards = new ArrayList();
-		size = ranks.length;
-		for(int i = 0; i < size; i++){
-			cards.add(new Card(ranks[i],suits[i],values[i]));
+		for(int iSuit = 0; iSuit < suits.length; iSuit++){
+			for(int iRank = 0; iRank < ranks.length; iRank++){
+				cards.add(new Card(ranks[iRank],suits[iSuit],values[iRank]));
+				size++;	
+			}		
 		}
 		shuffle();
 	}
@@ -72,7 +74,9 @@ public class Deck {
 	 *         previously dealt.
 	 */
 	public Card deal() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		Card card = cards.get(size-1);
+		size--;
+		return card;
 	}
 
 	/**

@@ -21,5 +21,7 @@ public class DeckTester {
 		System.out.println(deck1.deal().toString());
 		System.out.println(deck1.deal().toString());
 		
+		//deck1.perfectShuffle();
+		
 	}
 }

@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * This class provides a convenient way to test shuffling methods.
  */
@@ -7,12 +9,12 @@ public class Shuffler {
 	 * The number of consecutive shuffle steps to be performed in each call
 	 * to each sorting procedure.
 	 */
-	private static final int SHUFFLE_COUNT = 1;
+	private static final int SHUFFLE_COUNT = 8;
 
 	/**
 	 * The number of values to shuffle.
 	 */
-	private static final int VALUE_COUNT = 4;
+	private static final int VALUE_COUNT = 52;
 
 	/**
 	 * Tests shuffling methods.
@@ -26,7 +28,7 @@ public class Shuffler {
 			values1[i] = i;
 			}
 		for (int j = 1; j <= SHUFFLE_COUNT; j++) {
-			perfectShuffle(values1);
+			values1 = perfectShuffle(values1);
 			System.out.print("  " + j + ":");
 			for (int k = 0; k < values1.length; k++) {
 				System.out.print(" " + values1[k]);
@@ -42,7 +44,11 @@ public class Shuffler {
 			values2[i] = i;
 			}
 		for (int j = 1; j <= SHUFFLE_COUNT; j++) {
-			selectionShuffle(values2);
+			ArrayList<Integer> arrayListValues = selectionShuffle(values2);
+			for(int i = 0; i < values2.length; i++){
+				values2[i] = arrayListValues.get(i);
+			}
+			
 			System.out.print("  " + j + ":");
 			for (int k = 0; k < values2.length; k++) {
 				System.out.print(" " + values2[k]);
@@ -59,7 +65,7 @@ public class Shuffler {
 	 * the cards in one half with the cards in the other.
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
-	public static void perfectShuffle(int[] values) { 
+	public static int[] perfectShuffle(int[] values) { 
 		int[] shuffled = new int[values.length];
 		int valuesI = 0;
 		
@@ -73,7 +79,7 @@ public class Shuffler {
 			shuffled[valuesI] = values[i];
 			valuesI++;
 		}
-		//values = shuffled;
+		return shuffled;
 		//System.out.println(""+values[0]+values[1]+values[2]+values[3]);
 	}
 
@@ -87,8 +93,22 @@ public class Shuffler {
 	 * An efficient version of this algorithm makes use of arrays to avoid
 	 * searching for an as-yet-unselected card.
 	 * @param values is an array of integers simulating cards to be shuffled.
+	 * @return 
 	 */
-	public static void selectionShuffle(int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+	public static ArrayList<Integer> selectionShuffle(int[] values) {
+		
+		ArrayList<Integer> shuffled = new ArrayList<Integer>();
+		while(shuffled.size() < 52){
+			int random = (int) (Math.random() * 51);
+			
+			if(values[random] != -1){
+				shuffled.add(values[random]);
+				values[random] = -1;
+			}
+			
+		}
+		System.out.println();
+		return shuffled;
+		
 	}
 }

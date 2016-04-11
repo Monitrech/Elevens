@@ -75,6 +75,7 @@ public class Deck {
 			}
 			
 		}
+		//System.out.println(shuffled.get(0) + shuffled.get(1) + shuffled.get(2) + shuffled.get(3);
 		
 	}
 

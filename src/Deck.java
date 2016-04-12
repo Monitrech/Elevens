@@ -65,20 +65,6 @@ public class Deck {
 	 * and reset the size to represent the entire deck.
 	 */
 	public void shuffle() {
-<<<<<<< HEAD
-		ArrayList<Card> shuffled = new ArrayList<Card>();
-		while(shuffled.size() < 52){
-			int random = (int) (Math.random() * 51);
-			
-			if(cards.get(random) != null){
-				shuffled.add(cards.get(random));
-				cards.set(random, null);
-			}
-			
-		}
-		//System.out.println(shuffled.get(0) + shuffled.get(1) + shuffled.get(2) + shuffled.get(3);
-		
-=======
 		Card temp; 
 		for(int i = 0; i < cards.size(); i++){
 			 int random = (int)(Math.random()*(cards.size()-1));
@@ -87,7 +73,6 @@ public class Deck {
 			 cards.set(random,temp);
 		 }	
 		size = cards.size();
->>>>>>> origin/master
 	}
 
 	/**

@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 /**
  * This class provides a convenient way to test shuffling methods.
  */
@@ -14,7 +12,7 @@ public class Shuffler {
 	/**
 	 * The number of values to shuffle.
 	 */
-	private static final int VALUE_COUNT = 52;
+	private static final int VALUE_COUNT = 4;
 
 	/**
 	 * Tests shuffling methods.
@@ -28,11 +26,7 @@ public class Shuffler {
 			values1[i] = i;
 			}
 		for (int j = 1; j <= SHUFFLE_COUNT; j++) {
-<<<<<<< HEAD
-			values1 = perfectShuffle(values1);
-=======
 			int[] values3 = perfectShuffle(values1);
->>>>>>> origin/master
 			System.out.print("  " + j + ":");
 			for (int k = 0; k < values1.length; k++) {
 				System.out.print(" " + values3[k]);
@@ -48,15 +42,7 @@ public class Shuffler {
 			values2[i] = i;
 			}
 		for (int j = 1; j <= SHUFFLE_COUNT; j++) {
-<<<<<<< HEAD
-			ArrayList<Integer> arrayListValues = selectionShuffle(values2);
-			for(int i = 0; i < values2.length; i++){
-				values2[i] = arrayListValues.get(i);
-			}
-			
-=======
 			int[] values3 = selectionShuffle(values2);
->>>>>>> origin/master
 			System.out.print("  " + j + ":");
 			for (int k = 0; k < values2.length; k++) {
 				System.out.print(" " + values3[k]);
@@ -89,10 +75,7 @@ public class Shuffler {
 			valuesI++;
 		}
 		return shuffled;
-<<<<<<< HEAD
-=======
 		//values = shuffled;
->>>>>>> origin/master
 		//System.out.println(""+values[0]+values[1]+values[2]+values[3]);
 	}
 
@@ -106,25 +89,7 @@ public class Shuffler {
 	 * An efficient version of this algorithm makes use of arrays to avoid
 	 * searching for an as-yet-unselected card.
 	 * @param values is an array of integers simulating cards to be shuffled.
-	 * @return 
 	 */
-<<<<<<< HEAD
-	public static ArrayList<Integer> selectionShuffle(int[] values) {
-		
-		ArrayList<Integer> shuffled = new ArrayList<Integer>();
-		while(shuffled.size() < 52){
-			int random = (int) (Math.random() * 51);
-			
-			if(values[random] != -1){
-				shuffled.add(values[random]);
-				values[random] = -1;
-			}
-			
-		}
-		System.out.println();
-		return shuffled;
-		
-=======
 	public static int[] selectionShuffle(int[] values) {
 		int temp; 
 		for(int i = 0; i < values.length; i++){
@@ -134,6 +99,5 @@ public class Shuffler {
 			 values[random] = temp;
 		 }
 		return values;
->>>>>>> origin/master
 	}
 }

@@ -21,8 +21,27 @@ public class DeckTester {
 		System.out.println(deck1.deal().toString());
 		System.out.println(deck1.deal().toString());
 		
+<<<<<<< HEAD
 		//deck1.perfectShuffle();
 		deck1.shuffle();
+=======
+		System.out.println();
+		
+		System.out.println(deck2.isEmpty());
+		System.out.println(deck2.size());
+		System.out.println(deck2.deal().toString());
+		System.out.println(deck2.deal().toString());
+		System.out.println(deck2.deal().toString());
+		
+		System.out.println();
+		
+		System.out.println(deck2.isEmpty());
+		System.out.println(deck2.size());
+		System.out.println(deck2.deal().toString());
+		System.out.println(deck2.deal().toString());
+		System.out.println(deck2.deal().toString());
+		
+>>>>>>> origin/master
 		
 	}
 }

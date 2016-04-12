@@ -7,7 +7,7 @@ public class Shuffler {
 	 * The number of consecutive shuffle steps to be performed in each call
 	 * to each sorting procedure.
 	 */
-	private static final int SHUFFLE_COUNT = 1;
+	private static final int SHUFFLE_COUNT = 8;
 
 	/**
 	 * The number of values to shuffle.
@@ -26,10 +26,10 @@ public class Shuffler {
 			values1[i] = i;
 			}
 		for (int j = 1; j <= SHUFFLE_COUNT; j++) {
-			perfectShuffle(values1);
+			int[] values3 = perfectShuffle(values1);
 			System.out.print("  " + j + ":");
 			for (int k = 0; k < values1.length; k++) {
-				System.out.print(" " + values1[k]);
+				System.out.print(" " + values3[k]);
 			}
 			System.out.println();
 		}
@@ -42,10 +42,10 @@ public class Shuffler {
 			values2[i] = i;
 			}
 		for (int j = 1; j <= SHUFFLE_COUNT; j++) {
-			selectionShuffle(values2);
+			int[] values3 = selectionShuffle(values2);
 			System.out.print("  " + j + ":");
 			for (int k = 0; k < values2.length; k++) {
-				System.out.print(" " + values2[k]);
+				System.out.print(" " + values3[k]);
 			}
 			System.out.println();
 		}
@@ -58,8 +58,9 @@ public class Shuffler {
 	 * The perfect shuffle algorithm splits the deck in half, then interleaves
 	 * the cards in one half with the cards in the other.
 	 * @param values is an array of integers simulating cards to be shuffled.
+	 * @return 
 	 */
-	public static void perfectShuffle(int[] values) { 
+	public static int[] perfectShuffle(int[] values) { 
 		int[] shuffled = new int[values.length];
 		int valuesI = 0;
 		
@@ -73,6 +74,7 @@ public class Shuffler {
 			shuffled[valuesI] = values[i];
 			valuesI++;
 		}
+		return shuffled;
 		//values = shuffled;
 		//System.out.println(""+values[0]+values[1]+values[2]+values[3]);
 	}
@@ -88,7 +90,14 @@ public class Shuffler {
 	 * searching for an as-yet-unselected card.
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
-	public static void selectionShuffle(int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+	public static int[] selectionShuffle(int[] values) {
+		int temp; 
+		for(int i = 0; i < values.length; i++){
+			 int random = (int)(Math.random()*(values.length-1));
+			 temp = values[i];
+			 values[i] = values[random];
+			 values[random] = temp;
+		 }
+		return values;
 	}
 }

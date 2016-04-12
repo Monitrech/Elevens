@@ -36,7 +36,7 @@ public class Card {
 		suit = cardSuit;
 		pointValue = cardPointValue;
 	}
-
+//ok
 
 	/**
 	 * Accesses this <code>Card's</code> suit.

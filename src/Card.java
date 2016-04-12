@@ -36,8 +36,7 @@ public class Card {
 		suit = cardSuit;
 		pointValue = cardPointValue;
 	}
-//ok
-fbfs
+
 	/**
 	 * Accesses this <code>Card's</code> suit.
 	 * @return this <code>Card's</code> suit.

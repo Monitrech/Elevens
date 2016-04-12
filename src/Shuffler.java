@@ -12,7 +12,7 @@ public class Shuffler {
 	/**
 	 * The number of values to shuffle.
 	 */
-	private static final int VALUE_COUNT = 4;
+	private static final int VALUE_COUNT = 52;
 
 	/**
 	 * Tests shuffling methods.
@@ -27,6 +27,7 @@ public class Shuffler {
 			}
 		for (int j = 1; j <= SHUFFLE_COUNT; j++) {
 			int[] values3 = perfectShuffle(values1);
+			values1 = values3;
 			System.out.print("  " + j + ":");
 			for (int k = 0; k < values1.length; k++) {
 				System.out.print(" " + values3[k]);
